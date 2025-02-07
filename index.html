@@ -41,60 +41,8 @@
             background-color: #c0392b;
         }
     
-   <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cronômetro de Dias</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-            background-color: black;
-            color: white;
-        }
-        .cronometro {
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-
-    <h1>Contagem Regressiva</h1>
-    <p>Tempo restante até 18/02/2025:</p>
-    <div class="cronometro" id="cronometro"></div>
-
-    <script>
-        function atualizarCronometro() {
-            const dataFinal = new Date("2025-02-18T00:00:00").getTime(); // Data de término
-            const agora = new Date().getTime(); // Data atual
-            const diferenca = dataFinal - agora; // Diferença em milissegundos
-
-            // Calcula os dias restantes
-            const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-
-            // Exibe a contagem regressiva
-            document.getElementById("cronometro").innerHTML = `${dias} dias restantes`;
-
-            // Se a data final for atingida, exibe uma mensagem
-            if (diferenca < 0) {
-                document.getElementById("cronometro").innerHTML = "O prazo terminou!";
-            }
-        }
-
-        // Atualiza o cronômetro a cada segundo
-        setInterval(atualizarCronometro, 1000);
-
-        // Executa a função imediatamente ao carregar a página
-        atualizarCronometro();
-    </script>
-
-</body>
-</html> 
+> 
+    
     
     </style>
 </head>
@@ -107,6 +55,90 @@
         de todos as coisas que eu fizer para você </p>
         <img id="minhaImagem" src="Meu amor5.jpg" alt="Descrição da imagem" width="100">
 </p>
+
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronômetro e Relógio Digital</title>
+    <style>
+        @font-face {
+            font-family: 'Digital';
+            src: url('https://fonts.cdnfonts.com/s/11610/DS-DIGI.TTF') format('truetype');
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .display {
+            font-family: 'Digital', sans-serif;
+            font-size: 48px;
+            font-weight: bold;
+            background-color: #222;
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            width: 350px;
+            text-align: center;
+            border: 3px solid pink;
+        }
+    </style>
+</head>
+<body>
+
+    <h1></h1>
+
+    <!-- Cronômetro de Contagem Regressiva -->
+    <div class="container">
+        <p>Tempo restante para 7 meses de felicidade:</p>
+        <div class="display" id="cronometro"></div>
+    </div>
+
+    <script>
+        function atualizarRelogio() {
+            const agora = new Date();
+            const horas = agora.getHours().toString().padStart(2, '0');
+            const minutos = agora.getMinutes().toString().padStart(2, '0');
+            const segundos = agora.getSeconds().toString().padStart(2, '0');
+            document.getElementById("relogio").innerHTML = `${horas}:${minutos}:${segundos}`;
+        }
+
+        function atualizarCronometro() {
+            const dataFinal = new Date("2025-02-18T00:00:00").getTime();
+            const agora = new Date().getTime();
+            const diferenca = dataFinal - agora;
+
+            const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            const segundos = Math.floor((diferenca % (1000 * 60)) / 1000).toString().padStart(2, '0');
+
+            document.getElementById("cronometro").innerHTML = `${dias}d ${horas}:${minutos}:${segundos}`;
+
+            if (diferenca < 0) {
+                document.getElementById("cronometro").innerHTML = "00d 00:00:00";
+            }
+        }
+
+        setInterval(atualizarRelogio, 1000);
+        setInterval(atualizarCronometro, 1000);
+
+        atualizarRelogio();
+        atualizarCronometro();
+    </script>
+
+</body>
+</html>
+   
 
     <!-- Primeiro vídeo -->
     <video controls>
