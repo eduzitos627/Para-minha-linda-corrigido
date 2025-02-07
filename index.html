@@ -8,10 +8,9 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f9f9f9;
-            color: #333;
-            margin: 0;
-            padding: 20px;
+            margin: 20px;
+            background-color: black; /* Fundo preto */
+            color: white; /* Texto branco para contraste */
             overflow: auto; /* Permite a rolagem */
         }
         h1 {
@@ -41,11 +40,73 @@
         .music-link:hover {
             background-color: #c0392b;
         }
+    
+   <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronômetro de Dias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: black;
+            color: white;
+        }
+        .cronometro {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-    <h1>Para Minha Namorada ❤️</h1>
-    <p>Este site foi feito especialmente para você, com todo o meu carinho!</p>
+
+    <h1>Contagem Regressiva</h1>
+    <p>Tempo restante até 18/02/2025:</p>
+    <div class="cronometro" id="cronometro"></div>
+
+    <script>
+        function atualizarCronometro() {
+            const dataFinal = new Date("2025-02-18T00:00:00").getTime(); // Data de término
+            const agora = new Date().getTime(); // Data atual
+            const diferenca = dataFinal - agora; // Diferença em milissegundos
+
+            // Calcula os dias restantes
+            const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+
+            // Exibe a contagem regressiva
+            document.getElementById("cronometro").innerHTML = `${dias} dias restantes`;
+
+            // Se a data final for atingida, exibe uma mensagem
+            if (diferenca < 0) {
+                document.getElementById("cronometro").innerHTML = "O prazo terminou!";
+            }
+        }
+
+        // Atualiza o cronômetro a cada segundo
+        setInterval(atualizarCronometro, 1000);
+
+        // Executa a função imediatamente ao carregar a página
+        atualizarCronometro();
+    </script>
+
+</body>
+</html> 
+    
+    </style>
+</head>
+<body>
+    <h1>Eu te amo meu amor, te amo, você mesmo Nathaly❤️</h1>
+   
+
+    
+    <p>Este site foi feito especialmente para você, Para que guarde as memorias 
+        de todos as coisas que eu fizer para você </p>
+        <img id="minhaImagem" src="Meu amor5.jpg" alt="Descrição da imagem" width="100">
+</p>
 
     <!-- Primeiro vídeo -->
     <video controls>
@@ -91,3 +152,20 @@ Ta-ta-ta ta-ta-ra-ta-ra-ta</p>
 </p>
 </body>
 </html>
+
+    <img id="minhaImagem" src="flordela.png" alt="Descrição da imagem" width="350">
+
+</p> essa flor feita com bastante carinho pra você </p>
+
+    <img id="minhaImagem" src="rubis.png" alt="Descrição da imagem" width="350">
+
+    <script>
+        function mudarImagem() {
+            document.getElementById("minhaImagem").src = "nova-imagem.jpg";
+        }
+    </script>
+
+</body>
+</html>
+
+<script src="script.js?v=2"></script>
