@@ -1,290 +1,395 @@
-<!DOCTYPE html><html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SO VOCE FAZ MINHA PUPILA DILATAR</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-            background-color: black; /* Fundo preto */
-            color: white; /* Texto branco para contraste */
-            overflow: auto; /* Permite a rolagem */
-        }
-        h1 {
-            color: white;
-        }
-        video {
-            width: 80%;
-            max-width: 600px;
-            margin: 20px auto;
-            border: 10px solid green;
-            border-radius: 10px;
-        }
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-        .music-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #e74c3c;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-        }
-        .music-link:hover {
-            background-color: #c0392b;
-        }> 
+<!DOCTYPE html>  <html lang="pt-BR">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>SO VOCE FAZ MINHA PUPILA DILATAR</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            text-align: center;  
+            margin: 20px;  
+            background-color: black; /* Fundo preto */  
+            color: white; /* Texto branco para contraste */  
+            overflow: auto; /* Permite a rolagem */  
+        }  
+        h1 {  
+            color: white;  
+        }  
+        video {  
+            width: 80%;  
+            max-width: 600px;  
+            margin: 20px auto;  
+            border: 10px solid green;  
+            border-radius: 10px;  
+        }  
+        p {  
+            font-size: 1.2em;  
+            line-height: 1.6;  
+        }  
+        .music-link {  
+            display: inline-block;  
+            margin-top: 20px;  
+            padding: 10px 20px;  
+            background-color: #e74c3c;  
+            color: white;  
+            text-decoration: none;  
+            border-radius: 5px;  
+            font-size: 1.1em;  
+        }  
+        .music-link:hover {  
+            background-color: #c0392b;  
+        }  > 
 
 </style>
 
-</head>
-<body>
-    <h1>Eu te amo meu amor, te amo, você mesmo Nathaly❤️</h1><p>Este site foi feito especialmente para você, Para que guarde as memorias 
-    de todos as coisas que eu fizer para você </p>
+</head>  
+<body>  
+    <h1>Eu te amo meu amor, te amo, você mesmo Nathaly❤️</h1>  <p>Este site foi feito especialmente para você, Para que guarde as memorias   
+    de todos as coisas que eu fizer para você </p>  
     <img id="minhaImagem" src="Meu amor5.jpg" alt="Descrição da imagem" width="100">
 
-</p><!DOCTYPE html>
+</p>  <!DOCTYPE html>
 
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cronômetro e Relógio Digital</title>
-    <style>
-        @font-face {
-            font-family: 'Digital';
-            src: url('https://fonts.cdnfonts.com/s/11610/DS-DIGI.TTF') format('truetype');
-        }body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        background-color: black;
-        color: white;
-    }
+<html lang="pt-BR">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Cronômetro e Relógio Digital</title>  
+    <style>  
+        @font-face {  
+            font-family: 'Digital';  
+            src: url('https://fonts.cdnfonts.com/s/11610/DS-DIGI.TTF') format('truetype');  
+        }  body {  
+        font-family: Arial, sans-serif;  
+        text-align: center;  
+        background-color: black;  
+        color: white;  
+    }  
 
-    .container {
-        margin-top: 20px;
-    }
+    .container {  
+        margin-top: 20px;  
+    }  
 
-    .display {
-        font-family: 'Digital', sans-serif;
-        font-size: 48px;
-        font-weight: bold;
-        background-color: black;
-        padding: 15px;
-        border-radius: 20px;
-        display: inline-block;
-        width: 400px;
-        text-align: center;
-        border: 6.6px solid green;
-    }
+    .display {  
+        font-family: 'Digital', sans-serif;  
+        font-size: 48px;  
+        font-weight: bold;  
+        background-color: black;  
+        padding: 15px;  
+        border-radius: 20px;  
+        display: inline-block;  
+        width: 400px;  
+        text-align: center;  
+        border: 6.6px solid green;  
+    }  
 </style>
 
-</head>
-<body><h1></h1>
+</head>  
+<body>  <h1></h1>  
 
-<!-- Cronômetro de Contagem Regressiva -->
-<div class="container">
-    <p>Tempo restante para 7 meses de felicidade:</p>
-    <div class="display" id="cronometro"></div>
-</div>
+<!-- Cronômetro de Contagem Regressiva -->  
+<div class="container">  
+    <p>Tempo restante para 7 meses de felicidade:</p>  
+    <div class="display" id="cronometro"></div>  
+</div>  
 
-<script>
-    function atualizarRelogio() {
-        const agora = new Date();
-        const horas = agora.getHours().toString().padStart(2, '0');
-        const minutos = agora.getMinutes().toString().padStart(2, '0');
-        const segundos = agora.getSeconds().toString().padStart(2, '0');
-        document.getElementById("relogio").innerHTML = `${horas}:${minutos}:${segundos}`;
-    }
+<script>  
+    function atualizarRelogio() {  
+        const agora = new Date();  
+        const horas = agora.getHours().toString().padStart(2, '0');  
+        const minutos = agora.getMinutes().toString().padStart(2, '0');  
+        const segundos = agora.getSeconds().toString().padStart(2, '0');  
+        document.getElementById("relogio").innerHTML = `${horas}:${minutos}:${segundos}`;  
+    }  
 
-    function atualizarCronometro() {
-        const dataFinal = new Date("2025-02-18T00:00:00").getTime();
-        const agora = new Date().getTime();
-        const diferenca = dataFinal - agora;
+    function atualizarCronometro() {  
+        const dataFinal = new Date("2025-02-18T00:00:00").getTime();  
+        const agora = new Date().getTime();  
+        const diferenca = dataFinal - agora;  
 
-        const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-        const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
-        const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
-        const segundos = Math.floor((diferenca % (1000 * 60)) / 1000).toString().padStart(2, '0');
+        const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));  
+        const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');  
+        const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');  
+        const segundos = Math.floor((diferenca % (1000 * 60)) / 1000).toString().padStart(2, '0');  
 
-        document.getElementById("cronometro").innerHTML = `${dias}d ${horas}:${minutos}:${segundos}`;
+        document.getElementById("cronometro").innerHTML = `${dias}d ${horas}:${minutos}:${segundos}`;  
 
-        if (diferenca < 0) {
-            document.getElementById("cronometro").innerHTML = "00d 00:00:00";
-        }
-    }
+        if (diferenca < 0) {  
+            document.getElementById("cronometro").innerHTML = "00d 00:00:00";  
+        }  
+    }  
 
-    setInterval(atualizarRelogio, 1000);
-    setInterval(atualizarCronometro, 1000);
+    setInterval(atualizarRelogio, 1000);  
+    setInterval(atualizarCronometro, 1000);  
 
-    atualizarRelogio();
-    atualizarCronometro();
+    atualizarRelogio();  
+    atualizarCronometro();  
 </script>
 
-</body>
-</html><!-- Primeiro vídeo -->
-<video controls>
-    <source src="parameuamor.mp4" type="video/mp4">
-    Seu navegador não suporta o elemento de vídeo.
-</video>
+</body>  
+</html>  <!-- Primeiro vídeo -->  
+<video controls>  
+    <source src="parameuamor.mp4" type="video/mp4">  
+    Seu navegador não suporta o elemento de vídeo.  
+</video>  
 
-<!-- Segundo vídeo -->
-<video controls>
-    <source src="parameuamor2.mp4" type="video/mp4">
-    Seu navegador não suporta o elemento de vídeo.
-</video>
+<!-- Segundo vídeo -->  
+<video controls>  
+    <source src="parameuamor2.mp4" type="video/mp4">  
+    Seu navegador não suporta o elemento de vídeo.  
+</video>  
 
 <p>Como que eu vou dizer pra ela?
 
-Que eu gosto do seu cheiro Da cor do seu cabelo Que ela faz minha pupila dilatar Eu quero dizer pra ele Que a rima fez efeito E agora penso o dia inteiro Só ele faz minha pupila dilatar Ta-ah-ah ta-ta-ra-ta-ra Ta-ta-ta ta-ta-ra-ta-ra Ta-ta-ta ta-ta-ra-ta-ra-ta</p>
+Que eu gosto do seu cheiro
+Da cor do seu cabelo
+Que ela faz minha pupila dilatar
+Eu quero dizer pra ele
+Que a rima fez efeito
+E agora penso o dia inteiro
+Só ele faz minha pupila dilatar
+Ta-ah-ah ta-ta-ra-ta-ra
+Ta-ta-ta ta-ta-ra-ta-ra
+Ta-ta-ta ta-ta-ra-ta-ra-ta</p>
 
-</body>
-</html><!-- Terceiro Video -->
-<video controls>
-    <source src="elvis.mp4" type="video/mp4">
-    Seu navegador não suporta o elemento de vídeo.
+</body>  
+</html>  <!-- Terceiro Video -->  
+<video controls>  
+    <source src="elvis.mp4" type="video/mp4">  
+    Seu navegador não suporta o elemento de vídeo.  
 </video>
 
-<!-- Link para a música no YouTube --><a href="https://youtu.be/OCMDyAteZY8?si=XPeu_pAEXsDLmh4Q target="_blank" class="music-link">
-    Ouvir "Falling in Love" - Elvis Presley
+<!-- Link para a música no YouTube -->  <a href="https://youtu.be/OCMDyAteZY8?si=XPeu_pAEXsDLmh4Q target="_blank" class="music-link">  
+    Ouvir "Falling in Love" - Elvis Presley  
 </a>
 
-<p>AQUELA MUSIQUINHA QUE VOCE GOSTA MEU AMOR
-    ESPECIALMENTE DEDICADA A VOCE</p>
-</p>
-</body>
-</html><!DOCTYPE html><html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SO VOCE FAZ MINHA PUPILA DILATAR</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-            background-color: black;
-            color: white;
-        }
-        .hidden {
-            display: none;
-        }
-        .image-container img {
-            margin: 10px;
-            border: 2px solid white;
-            border-radius: 10px;
-            max-width: 300px;
-        }
-        button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: white;
-            background-color: #e74c3c;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #c0392b;
-        }
-    </style><!-- Botão para abrir ou esconder as imagens -->
-<button onclick="toggleImages()">Mostrar Imagens</button>
+<p>AQUELA MUSIQUINHA QUE VOCE GOSTA MEU AMOR  
+    ESPECIALMENTE DEDICADA A VOCE</p>  
+</p>  
+</body>  
+</html>  <!DOCTYPE html>  <html lang="pt-BR">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>SO VOCE FAZ MINHA PUPILA DILATAR</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            text-align: center;  
+            margin: 20px;  
+            background-color: black;  
+            color: white;  
+        }  
+        .hidden {  
+            display: none;  
+        }  
+        .image-container img {  
+            margin: 10px;  
+            border: 2px solid white;  
+            border-radius: 10px;  
+            max-width: 300px;  
+        }  
+        button {  
+            margin-top: 20px;  
+            padding: 10px 20px;  
+            font-size: 16px;  
+            color: white;  
+            background-color: #e74c3c;  
+            border: none;  
+            border-radius: 5px;  
+            cursor: pointer;  
+        }  
+        button:hover {  
+            background-color: #c0392b;  
+        }  
+    </style>  <!-- Botão para abrir ou esconder as imagens -->  
+<button onclick="toggleImages()">Mostrar Imagens</button>  
 
-<!-- Container das imagens -->
-<div class="image-container hidden" id="images">
-    <img src="flordela.png" alt="Flor feita com carinho">
-    <p>Essa flor foi feita com bastante carinho para você</p>
+<!-- Container das imagens -->  
+<div class="image-container hidden" id="images">  
+    <img src="flordela.png" alt="Flor feita com carinho">  
+    <p>Essa flor foi feita com bastante carinho para você</p>  
 
-    <img src="rubis.png" alt="Frase bíblica">
-    <p>A frase bíblica que mais me lembra você</p>
+    <img src="rubis.png" alt="Frase bíblica">  
+    <p>A frase bíblica que mais me lembra você</p>  
 
-    <img src="1.jpg" alt="Imagem 1">
-    <img src="2.jpg" alt="Imagem 2">
-    <img src="3.jpg" alt="Imagem 3">
-    <img src="4.jpg" alt="Imagem 4">
-    <img src="5.jpg" alt="Imagem 5">
+    <img src="1.jpg" alt="Imagem 1">  
+    <img src="2.jpg" alt="Imagem 2">  
+    <img src="3.jpg" alt="Imagem 3">  
+    <img src="4.jpg" alt="Imagem 4">  
+</div>  
+
+<script>  
+    function toggleImages() {  
+        const imageContainer = document.getElementById('images');  
+        if (imageContainer.classList.contains('hidden')) {  
+            imageContainer.classList.remove('hidden');  
+        } else {  
+            imageContainer.classList.add('hidden');  
+        }  
+    }  
+</script>
+
+</div>  <script>  
+    function mudarImagem() {  
+        document.getElementById("minhaImagem").src = "nova-imagem.jpg";  
+    }  
+</script>
+
+</body>  
+</html>  <script src="script.js?v=2"></script>  <script // Atualiza a página automaticamente a cada 10 segundos  
+    setTimeout(() => {  
+        location.reload();  
+    }, 10000); // 10 segundos  
+</script>
+
+</body>  
+</html>  <!DOCTYPE html>  <html lang="pt-BR">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Mensagem Especial</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            text-align: center;  
+            background-color: black;  
+            color: white;  
+            margin-top: 50px;  
+        }  
+        .hidden {  
+            display: none;  
+        }  
+        .message {  
+            font-size: 1.5em;  
+            color: pink;  
+            font-weight: bold;  
+            margin-top: 20px;  
+        }  
+    </style>  
+</head>  
+<body>  <h1>Surpresa especial apenas esperando   
+     o momento certo ❤️</h1>  
+<p>só eu sei oq é </p>  
+
+<!-- Mensagem oculta inicialmente -->  
+<p id="specialMessage" class="message hidden">Oi meu amor, só pra lembrar você que hoje nós fazemos 7 meses juntos, quem diria né tanto tempo, passou rápido  
+    e eu queria te desejar um feliz 7 meses do meu lado, que eu te amo tanto e esses dias são os dias mais especiais da minha vida, mais especiais até que   
+    meu aniversário, pq n é apenas meu dia e sim o nosso dia o dia em que eu conheci vc, é vc mesmo e pessoa mais incrível e madura que já passou na minha   
+    vida a pessoa que eu mais amo nesse mundo e a pessoa que eu quero ficar o resto da minha vida, sei que talvez n seja muito esse presente mas tenho em   
+    mente que vc gosta pq é uma coisa tão boba mas com um valor sentimental tão grande, meu amor eu te amo tanto e olha daqui a pouco teremos 1 ano, 10 anos,   
+    50 anos juntos vai ser a melhor experiência da minha vida te quero em todos os momentos dela.  
+
+     UM BEIJÃO E EU TE AMO MUITO MINHA PRINCESA.</p> 
+    
+    
+
+
+<script>  
+    function verificarData() {  
+        const dataAtual = new Date().getTime();  
+        const dataLimite = new Date("2025-02-18T00:00:00").getTime(); // Defina a data desejada  
+
+        if (dataAtual >= dataLimite) {  
+            document.getElementById("specialMessage").classList.remove("hidden");  
+        }  
+    }  
+
+    verificarData(); // Verifica assim que o site carregar  
+</script>
+
+    <div id="quiz-container">
+    <h2>Quiz do Amor 💖</h2>
+    <div id="question-container"></div>
+    <button id="next-button" onclick="nextQuestion()">Próxima</button>
+    <p id="result-message" class="hidden"></p>
+    <img id="result-image" class="hidden" src="" alt="Resultado" style="max-width: 300px; margin-top: 20px; border-radius: 10px;">
 </div>
 
 <script>
-    function toggleImages() {
-        const imageContainer = document.getElementById('images');
-        if (imageContainer.classList.contains('hidden')) {
-            imageContainer.classList.remove('hidden');
+    const questions = [
+        {
+            question: "Qual é a minha comida favorita?",
+            options: ["Pizza", "Hambúrguer", "Sushi", "NATHALY"],
+            answer: "NATHALY"
+        },
+        {
+            question: "Qual é o meu filme preferido?",
+            options: ["Titanic", "Vingadores", "O Rei Leão", "TE VER SEM ROUPA"],
+            answer: "TE VER SEM ROUPA"
+        },
+        {
+            question: "Onde foi nosso primeiro beujo?",
+            options: ["15 de julho", "No ponto de onibus", "20 de setembro", "10 de março"],
+            answer: "No ponto de onibus"
+        },
+        {
+            question: "Qual é a minha cor favorita?",
+            options: ["Vermelho", "Azul", "Verde", "Amarelo"],
+            answer: "Azul"
+        }
+    ];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    function displayQuestion() {
+        const questionContainer = document.getElementById("question-container");
+        const nextButton = document.getElementById("next-button");
+        const resultMessage = document.getElementById("result-message");
+        const resultImage = document.getElementById("result-image");
+
+        if (currentQuestionIndex < questions.length) {
+            const currentQuestion = questions[currentQuestionIndex];
+            const optionsHtml = currentQuestion.options
+                .map(
+                    (option) =>
+                        `<label>
+                            <input type="radio" name="quiz-option" value="${option}">
+                            ${option}
+                         </label><br>`
+                )
+                .join("");
+            questionContainer.innerHTML = `
+                <p>${currentQuestion.question}</p>
+                <div>${optionsHtml}</div>
+            `;
+            nextButton.style.display = "inline-block";
+            resultMessage.classList.add("hidden");
+            resultImage.classList.add("hidden");
         } else {
-            imageContainer.classList.add('hidden');
-        }
-    }
-</script>
+            // Final do quiz
+            questionContainer.innerHTML = "";
+            nextButton.style.display = "none";
 
-</div><script>
-    function mudarImagem() {
-        document.getElementById("minhaImagem").src = "nova-imagem.jpg";
-    }
-</script>
+            if (score === questions.length) {
+                resultMessage.textContent = "Parabéns! Você acertou todas as perguntas! eu te amo obrigado por responder essas perguntinhas bobas ❤️";
+                resultImage.src = "happy-happy-happy-cat.gif"; // Substitua pelo caminho do GIF para acertos
+            } else {
+                resultMessage.textContent = `Você acertou ${score}/${questions.length}. Ainda assim, você é especial para mim! mas tente novame 💕`;
+                resultImage.src = "gatinhotriste.jpg"; // Substitua pelo caminho da imagem para erros
+            }
 
-</body>
-</html><script src="script.js?v=2"></script><script // Atualiza a página automaticamente a cada 10 segundos
-    setTimeout(() => {
-        location.reload();
-    }, 10000); // 10 segundos
-</script>
-
-</body>
-</html><!DOCTYPE html><html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensagem Especial</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: black;
-            color: white;
-            margin-top: 50px;
-        }
-        .hidden {
-            display: none;
-        }
-        .message {
-            font-size: 1.5em;
-            color: pink;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body><h1>Surpresa especial apenas esperando 
-     o momento certo ❤️</h1>
-<p>só eu sei oq é </p>
-
-<!-- Mensagem oculta inicialmente -->
-<p id="specialMessage" class="message hidden">Oi meu amor, só pra lembrar você que hoje nós fazemos 7 meses juntos, quem diria né tanto tempo, passou rápido
-    e eu queria te desejar um feliz 7 meses do meu lado, que eu te amo tanto e esses dias são os dias mais especiais da minha vida, mais especiais até que 
-    meu aniversário, pq n é apenas meu dia e sim o nosso dia o dia em que eu conheci vc, é vc mesmo e pessoa mais incrível e madura que já passou na minha 
-    vida a pessoa que eu mais amo nesse mundo e a pessoa que eu quero ficar o resto da minha vida, sei que talvez n seja muito esse presente mas tenho em 
-    mente que vc gosta pq é uma coisa tão boba mas com um valor sentimental tão grande, meu amor eu te amo tanto e olha daqui a pouco teremos 1 ano, 10 anos, 
-    50 anos juntos vai ser a melhor experiência da minha vida te quero em todos os momentos dela.
-
-     UM BEIJÃO E EU TE AMO MUITO MINHA PRINCESA.</p>
-
-
-<script>
-    function verificarData() {
-        const dataAtual = new Date().getTime();
-        const dataLimite = new Date("2025-02-18T00:00:00").getTime(); // Defina a data desejada
-
-        if (dataAtual >= dataLimite) {
-            document.getElementById("specialMessage").classList.remove("hidden");
+            resultMessage.classList.remove("hidden");
+            resultImage.classList.remove("hidden");
         }
     }
 
-    verificarData(); // Verifica assim que o site carregar
+    function nextQuestion() {
+        const selectedOption = document.querySelector('input[name="quiz-option"]:checked');
+        if (!selectedOption) {
+            alert("Por favor, selecione uma opção!");
+            return;
+        }
+        if (selectedOption.value === questions[currentQuestionIndex].answer) {
+            score++;
+        }
+        currentQuestionIndex++;
+        displayQuestion();
+    }
+
+    // Inicializa o quiz
+    displayQuestion();
 </script>
 
+    
