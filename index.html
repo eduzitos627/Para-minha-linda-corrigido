@@ -280,7 +280,41 @@ Ta-ta-ta ta-ta-ra-ta-ra-ta</p>
     mente que vc gosta pq é uma coisa tão boba mas com um valor sentimental tão grande, meu amor eu te amo tanto e olha daqui a pouco teremos 1 ano, 10 anos,   
     50 anos juntos vai ser a melhor experiência da minha vida te quero em todos os momentos dela.  
 
-     UM BEIJÃO E EU TE AMO MUITO MINHA PRINCESA.</p> 
+    UM BEIJÃO E EU TE AMO MUITO MINHA PRINCESA.</p>
+    
+    
+ <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frase Dedicada</title>
+  <style>
+    .frase-dedicada {
+      font-size: 48px; /* Deixa a frase grande */
+      color: pink; /* Define a cor rosa */
+      font-weight: bold; /* Deixa o texto em negrito */
+      text-align: center; /* Centraliza o texto */
+      margin-top: 50px; /* Espaçamento no topo */
+    }
+  </style>
+</head>
+<body>
+  <div class="frase-dedicada">
+    Fique com esses vídeos e músicas que eu dedico a você
+  </div>
+</body>
+</html>
+    
+    <div id="videos" style="display: none;">
+  <video src="video1.mp4" controls></video>
+  <video src="video2.mp4" controls></video>
+  <video src="video3.mp4" controls></video>
+  <video src="video4.mp4" controls></video>
+  <video src="video5.mp4" controls></video>
+  <video src="video6.mp4" controls></video>
+  <video src="video7.mp4" controls></video>
+</div>
     
     
 
@@ -288,108 +322,27 @@ Ta-ta-ta ta-ta-ra-ta-ra-ta</p>
 <script>  
     function verificarData() {  
         const dataAtual = new Date().getTime();  
-        const dataLimite = new Date("2025-02-18T00:00:00").getTime(); // Defina a data desejada  
+        const dataLimite = new Date("2025-02-17T23:59:00").getTime(); // Defina a data desejada  
 
         if (dataAtual >= dataLimite) {  
             document.getElementById("specialMessage").classList.remove("hidden");  
         }  
     }  
+    
+    function verificarHorario() {
+  const agora = new Date();
+  const dataMeta = new Date('2025-02-17T23:59:00');
+
+  if (agora >= dataMeta) {
+    document.getElementById('videos').style.display = 'block'; // Mostra os vídeos
+    clearInterval(intervalo); // Para de verificar depois que os vídeos aparecem
+  }
+}
+
+// Verifica a cada segundo se já é o horário
+const intervalo = setInterval(verificarHorario, 1000);
 
     verificarData(); // Verifica assim que o site carregar  
-</script>
-
-    <div id="quiz-container">
-    <h2>Quiz do Amor 💖</h2>
-    <div id="question-container"></div>
-    <button id="next-button" onclick="nextQuestion()">Próxima</button>
-    <p id="result-message" class="hidden"></p>
-    <img id="result-image" class="hidden" src="" alt="Resultado" style="max-width: 300px; margin-top: 20px; border-radius: 10px;">
-</div>
-
-<script>
-    const questions = [
-        {
-            question: "Qual é a minha comida favorita?",
-            options: ["Pizza", "Hambúrguer", "Sushi", "NATHALY"],
-            answer: "NATHALY"
-        },
-        {
-            question: "Qual é o meu filme preferido?",
-            options: ["Titanic", "Vingadores", "O Rei Leão", "TE VER SEM ROUPA"],
-            answer: "TE VER SEM ROUPA"
-        },
-        {
-            question: "Onde foi nosso primeiro beijo?",
-            options: ["15 de julho", "No ponto de onibus", "20 de setembro", "10 de março"],
-            answer: "No ponto de onibus"
-        },
-        {
-            question: "Qual é a minha cor favorita?",
-            options: ["Vermelho", "Azul", "Verde", "Amarelo"],
-            answer: "Azul"
-        }
-    ];
-
-    let currentQuestionIndex = 0;
-    let score = 0;
-
-    function displayQuestion() {
-        const questionContainer = document.getElementById("question-container");
-        const nextButton = document.getElementById("next-button");
-        const resultMessage = document.getElementById("result-message");
-        const resultImage = document.getElementById("result-image");
-
-        if (currentQuestionIndex < questions.length) {
-            const currentQuestion = questions[currentQuestionIndex];
-            const optionsHtml = currentQuestion.options
-                .map(
-                    (option) =>
-                        `<label>
-                            <input type="radio" name="quiz-option" value="${option}">
-                            ${option}
-                         </label><br>`
-                )
-                .join("");
-            questionContainer.innerHTML = `
-                <p>${currentQuestion.question}</p>
-                <div>${optionsHtml}</div>
-            `;
-            nextButton.style.display = "inline-block";
-            resultMessage.classList.add("hidden");
-            resultImage.classList.add("hidden");
-        } else {
-            // Final do quiz
-            questionContainer.innerHTML = "";
-            nextButton.style.display = "none";
-
-            if (score === questions.length) {
-                resultMessage.textContent = "Parabéns! Você acertou todas as perguntas! eu te amo obrigado por responder essas perguntinhas bobas ❤️";
-                resultImage.src = "happy-happy-happy-cat.gif"; // Substitua pelo caminho do GIF para acertos
-            } else {
-                resultMessage.textContent = `Você acertou ${score}/${questions.length}. Ainda assim, você é especial para mim! mas tente novame 💕`;
-                resultImage.src = "gatinhotriste.jpg"; // Substitua pelo caminho da imagem para erros
-            }
-
-            resultMessage.classList.remove("hidden");
-            resultImage.classList.remove("hidden");
-        }
-    }
-
-    function nextQuestion() {
-        const selectedOption = document.querySelector('input[name="quiz-option"]:checked');
-        if (!selectedOption) {
-            alert("Por favor, selecione uma opção!");
-            return;
-        }
-        if (selectedOption.value === questions[currentQuestionIndex].answer) {
-            score++;
-        }
-        currentQuestionIndex++;
-        displayQuestion();
-    }
-
-    // Inicializa o quiz
-    displayQuestion();
 </script>
 
     
