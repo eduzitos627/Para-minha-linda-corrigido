@@ -46,7 +46,7 @@
 <body>  
     <h1>Eu te amo meu amor, te amo, você mesmo Nathaly❤️</h1>  <p>Este site foi feito especialmente para você, Para que guarde as memorias   
     de todos as coisas que eu fizer para você </p>  
-    <img id="minhaImagem" src="Meu amor5.jpg" alt="Descrição da imagem" width="100">
+    <img id="minhaImagem" src="4.jpg" alt="Descrição da imagem" width="100">
 
 </p>  <!DOCTYPE html>
 
@@ -78,7 +78,7 @@
         padding: 15px;  
         border-radius: 20px;  
         display: inline-block;  
-        width: 400px;  
+        width: 300px;  
         text-align: center;  
         border: 6.6px solid green;  
     }  
@@ -89,7 +89,7 @@
 
 <!-- Cronômetro de Contagem Regressiva -->  
 <div class="container">  
-    <p>Tempo restante para 8 meses de felicidade:</p>  
+    <p>Tempo restante para 9 meses de felicidade:</p>  
     <div class="display" id="cronometro"></div>  
 </div>  
 
@@ -103,7 +103,7 @@
     }  
 
     function atualizarCronometro() {  
-        const dataFinal = new Date("2025-03-18T00:00:00").getTime();  
+        const dataFinal = new Date("2025-04-18T00:00:00").getTime();  
         const agora = new Date().getTime();  
         const diferenca = dataFinal - agora;  
 
@@ -125,6 +125,245 @@
     atualizarRelogio();  
     atualizarCronometro();  
 </script>
+    
+    <!-- CSS do Carrossel Automático -->
+<style>
+    .carrossel-auto {
+        position: relative;
+        max-width: 250px;
+        margin: 10px auto;
+        overflow: hidden;
+        border: 3px solid pink;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(255, 192, 203, 0.6);
+    }
+    
+    .carrossel-container {
+        display: flex;
+        transition: transform 1s ease-in-out;
+    }
+    
+    .carrossel-slide {
+        min-width: 100%;
+        position: relative;
+    }
+    
+    .carrossel-slide img {
+        width: 100%;
+        display: block;
+    }
+    
+    .carrossel-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        color: pink;
+        padding: 20px;
+        text-align: center;
+        font-size: 2.0em;
+    }
+    
+    .carrossel-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        z-index: 10;
+    }
+    
+    .carrossel-nav button {
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 20px;
+        border-radius: 50%;
+        margin: 0 10px;
+    }
+    
+    .carrossel-indicadores {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        z-index: 10;
+    }
+    
+    .carrossel-indicador {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    
+    .carrossel-indicador.ativo {
+        background: pink;
+    }
+</style>
+
+<!-- HTML do Carrossel Automático -->
+<div class="carrossel-auto">
+    <div class="carrossel-container" id="carrossel-container">
+        <!-- Slides serão adicionados aqui pelo JavaScript -->
+    </div>
+    
+    <div class="carrossel-nav">
+        <button id="carrossel-prev">❮</button>
+        <button id="carrossel-next">❯</button>
+    </div>
+    
+    <div class="carrossel-indicadores" id="carrossel-indicadores">
+        <!-- Indicadores serão adicionados aqui pelo JavaScript -->
+    </div>
+</div>
+
+<!-- JavaScript do Carrossel Automático -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Configurações do carrossel
+        const config = {
+            imagens: [
+                { src: '1.jpg', legenda: 'Nossos melhores momentos' },
+                { src: '2.jpg', legenda: 'foram' },
+                { src: '3.jpg', legenda: 'Sempre juntos' },
+                { src: '4.jpg', legenda: 'Nosso amor' },
+                { src: '5.jpg', legenda: 'sempre' },
+                { src: '6.jpg', legenda: 'cresceu' },
+                { src: '7.jpg', legenda: 'ao lado um' },
+                { src: '8.jpg', legenda: 'do outro' },
+                { src: '9.jpg', legenda: 'e nunca para' },
+                { src: '10.jpg', legenda: 'de CRESCER' },
+                { src: 'flordela.png', legenda: 'EU TE AMO' },
+                { src: 'rubis.png', legenda: 'INFINITAMENTE' },
+            
+            ],
+            intervalo: 3500, // 5 segundos
+            transicao: 500  // 1 segundo
+        };
+        
+        // Elementos do carrossel
+        const container = document.getElementById('carrossel-container');
+        const indicadores = document.getElementById('carrossel-indicadores');
+        const btnPrev = document.getElementById('carrossel-prev');
+        const btnNext = document.getElementById('carrossel-next');
+        
+        let slideAtual = 0;
+        let intervalo;
+        
+        // Criar slides
+        function criarSlides() {
+            config.imagens.forEach((imagem, index) => {
+                // Criar slide
+                const slide = document.createElement('div');
+                slide.className = 'carrossel-slide';
+                
+                // Adicionar imagem
+                const img = document.createElement('img');
+                img.src = imagem.src;
+                img.alt = imagem.legenda;
+                
+                // Adicionar legenda
+                const caption = document.createElement('div');
+                caption.className = 'carrossel-caption';
+                caption.textContent = imagem.legenda;
+                
+                slide.appendChild(img);
+                slide.appendChild(caption);
+                container.appendChild(slide);
+                
+                // Criar indicador
+                const indicador = document.createElement('div');
+                indicador.className = 'carrossel-indicador';
+                indicador.dataset.index = index;
+                indicador.addEventListener('click', function() {
+                    irParaSlide(index);
+                });
+                indicadores.appendChild(indicador);
+            });
+            
+            // Iniciar com o primeiro slide ativo
+            atualizarIndicadores();
+        }
+        
+        // Mover para um slide específico
+        function irParaSlide(index) {
+            slideAtual = index;
+            container.style.transform = `translateX(-${slideAtual * 100}%)`;
+            atualizarIndicadores();
+            reiniciarIntervalo();
+        }
+        
+        // Slide anterior
+        function slideAnterior() {
+            slideAtual = (slideAtual - 1 + config.imagens.length) % config.imagens.length;
+            container.style.transform = `translateX(-${slideAtual * 100}%)`;
+            atualizarIndicadores();
+            reiniciarIntervalo();
+        }
+        
+        // Próximo slide
+        function proximoSlide() {
+            slideAtual = (slideAtual + 1) % config.imagens.length;
+            container.style.transform = `translateX(-${slideAtual * 100}%)`;
+            atualizarIndicadores();
+            reiniciarIntervalo();
+        }
+        
+        // Atualizar indicadores
+        function atualizarIndicadores() {
+            const todosIndicadores = document.querySelectorAll('.carrossel-indicador');
+            todosIndicadores.forEach((ind, i) => {
+                ind.classList.toggle('ativo', i === slideAtual);
+            });
+        }
+        
+        // Iniciar intervalo automático
+        function iniciarIntervalo() {
+            intervalo = setInterval(proximoSlide, config.intervalo);
+        }
+        
+        // Reiniciar intervalo
+        function reiniciarIntervalo() {
+            clearInterval(intervalo);
+            iniciarIntervalo();
+        }
+        
+        // Event listeners
+        btnPrev.addEventListener('click', slideAnterior);
+        btnNext.addEventListener('click', proximoSlide);
+        
+        // Pausar ao passar o mouse
+        document.querySelector('.carrossel-auto').addEventListener('mouseenter', function() {
+            clearInterval(intervalo);
+        });
+        
+        // Retomar quando o mouse sai
+        document.querySelector('.carrossel-auto').addEventListener('mouseleave', iniciarIntervalo);
+        
+        // Inicializar carrossel
+        criarSlides();
+        iniciarIntervalo();
+    });
+</script>
+    
+    
+    
+    </body>  
+</html>  <!-- zero vídeo --> 
+    <video controls>  
+    <source src="Video3.mp4" type="video/mp4">  
+    Seu navegador não suporta o elemento de vídeo.  
+</video>  
 
 </body>  
 </html>  <!-- Primeiro vídeo -->  
@@ -138,19 +377,6 @@
     <source src="parameuamor2.mp4" type="video/mp4">  
     Seu navegador não suporta o elemento de vídeo.  
 </video>  
-
-<p>Como que eu vou dizer pra ela?
-
-Que eu gosto do seu cheiro
-Da cor do seu cabelo
-Que ela faz minha pupila dilatar
-Eu quero dizer pra ele
-Que a rima fez efeito
-E agora penso o dia inteiro
-Só ele faz minha pupila dilatar
-Ta-ah-ah ta-ta-ra-ta-ra
-Ta-ta-ta ta-ta-ra-ta-ra
-Ta-ta-ta ta-ta-ra-ta-ra-ta</p>
 
 </body>  
 </html>  <!-- Terceiro Video -->  
@@ -215,33 +441,7 @@ Ta-ta-ta ta-ta-ra-ta-ra-ta</p>
         button:hover {  
             background-color: #c0392b;  
         }  
-    </style>  <!-- Botão para abrir ou esconder as imagens -->  
-<button onclick="toggleImages()">Mostrar Imagens</button>  
 
-<!-- Container das imagens -->  
-<div class="image-container hidden" id="images">  
-    <img src="flordela.png" alt="Flor feita com carinho">  
-    <p>Essa flor foi feita com bastante carinho para você</p>  
-
-    <img src="rubis.png" alt="Frase bíblica">  
-    <p>A frase bíblica que mais me lembra você</p>  
-
-    <img src="1.jpg" alt="Imagem 1">  
-    <img src="2.jpg" alt="Imagem 2">  
-    <img src="3.jpg" alt="Imagem 3">  
-    <img src="4.jpg" alt="Imagem 4">  
-</div>  
-
-<script>  
-    function toggleImages() {  
-        const imageContainer = document.getElementById('images');  
-        if (imageContainer.classList.contains('hidden')) {  
-            imageContainer.classList.remove('hidden');  
-        } else {  
-            imageContainer.classList.add('hidden');  
-        }  
-    }  
-</script>
 
 </div>  <script>  
     function mudarImagem() {  
@@ -286,8 +486,8 @@ Ta-ta-ta ta-ta-ra-ta-ra-ta</p>
 <p>só eu sei oq é </p>  
 
 <!-- Mensagem oculta inicialmente -->  
-<p id="specialMessage" class="message hidden">Oi meu amor, só pra lembrar você que hoje nós fazemos 7 meses juntos, quem diria né tanto tempo, passou rápido  
-    e eu queria te desejar um feliz 7 meses do meu lado, que eu te amo tanto e esses dias são os dias mais especiais da minha vida, mais especiais até que   
+<p id="specialMessage" class="message hidden">Oi meu amor, só pra lembrar você que hoje nós fazemos 8 meses juntos, quem diria né tanto tempo, passou rápido  
+    e eu queria te desejar um feliz 8 meses do meu lado, que eu te amo tanto e esses dias são os dias mais especiais da minha vida, mais especiais até que   
     meu aniversário, pq n é apenas meu dia e sim o nosso dia o dia em que eu conheci vc, é vc mesmo e pessoa mais incrível e madura que já passou na minha   
     vida a pessoa que eu mais amo nesse mundo e a pessoa que eu quero ficar o resto da minha vida, sei que talvez n seja muito esse presente mas tenho em   
     mente que vc gosta pq é uma coisa tão boba mas com um valor sentimental tão grande, meu amor eu te amo tanto e olha daqui a pouco teremos 1 ano, 10 anos,   
@@ -327,12 +527,7 @@ Ta-ta-ta ta-ta-ra-ta-ra-ta</p>
     <video controls>  
     <source src="Video2.mp4" type="video/mp4">  
     Seu navegador não suporta o elemento de vídeo.  
-</video>  
-    
-    <video controls>  
-    <source src="Video3.mp4" type="video/mp4">  
-    Seu navegador não suporta o elemento de vídeo.  
-</video>  
+</video>   
     
     <video controls>  
     <source src="Video4.mp4" type="video/mp4">  
@@ -384,5 +579,7 @@ const intervalo = setInterval(verificarHorario, 1000);
 
     verificarData(); // Verifica assim que o site carregar  
 </script>
+    
+    
 
     
